@@ -1,0 +1,24 @@
+class vowels:
+    def __init__(self, text: str):
+        self.text = text
+        self.start_inx = -1
+        self.end_inx = len(self.text) - 1
+        self.vowels = ["a", "e", "u", "o", "i", "y"]
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.start_inx += 1
+        if self.start_inx > self.end_inx:
+            raise StopIteration()
+        if self.text[self.start_inx].lower() in self.vowels:
+            return self.text[self.start_inx]
+
+        return self.__next__()
+
+
+my_string = vowels('Abcedifuty0o')
+
+for char in my_string:
+    print(char)
