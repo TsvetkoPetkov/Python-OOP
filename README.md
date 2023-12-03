@@ -1,1 +1,1 @@
-# Python-OOP
+# Python-OOP course
